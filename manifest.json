@@ -2,6 +2,8 @@
     "name": "Jadwal Piket PWA",
     "short_name": "JadwalPiket",
     "description": "Aplikasi PWA sederhana untuk notifikasi jadwal piket.",
+    "id": "/pwa-jadwal-piket/",
+    "scope": "/pwa-jadwal-piket/",
     "start_url": "/pwa-jadwal-piket/index.html",
     "display": "standalone",
     "background_color": "#ffffff",

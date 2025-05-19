@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { day: 4, hour: 8, minute: 0, person: "Fani", task: "Siram Tanaman & Tata Pot" },
         { day: 5, hour: 10, minute: 0, person: "Gilang", task: "Cek & Isi Ulang Perlengkapan (Sabun, Tisu)" },
         // Untuk testing, tambahkan jadwal yang akan datang dalam 1-2 menit dari sekarang:
-        // { day: new Date().getDay(), hour: new Date().getHours(), minute: new Date().getMinutes() + 1, person: "Tester", task: "Tes Notifikasi Segera" }
+        { day: new Date(Date.now() + 10 * 60000).getDay(), hour: new Date(Date.now() + 10 * 60000).getHours(), minute: new Date(Date.now() + 10 * 60000).getMinutes(), person: "Tester", task: "Tes Notifikasi 10 Menit" }
     ];
 
     function tampilkanJadwal() {

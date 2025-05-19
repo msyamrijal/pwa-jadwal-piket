@@ -1,5 +1,5 @@
 // sw.js
-const CACHE_NAME = 'jadwal-piket-cache-v1';
+const CACHE_NAME = 'jadwal-piket-cache-v2'; // VERSI DIUBAH
 const urlsToCache = [
     '/pwa-jadwal-piket/', // Cache halaman root dari scope
     '/pwa-jadwal-piket/index.html',

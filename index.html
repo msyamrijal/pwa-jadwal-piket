@@ -9,24 +9,28 @@
     <meta name="theme-color" content="#007bff"/>
     <!-- iOS splash screens and icon -->
     <link rel="apple-touch-icon" href="/pwa-jadwal-piket/icons/icon-192x192.png">
+    <link rel="icon" href="/pwa-jadwal-piket/icons/icon-192x192.png" type="image/png">
 </head>
 <body>
     <header>
-        <h1>Jadwal Piket Mingguan</h1>
+        <h1>🗓️ Jadwal Piket Mingguan</h1>
     </header>
     <main>
-        <button id="enableNotifications" style="display: none;">Aktifkan Notifikasi</button>
+        <button id="enableNotifications" style="display: none;">🔔 Aktifkan Notifikasi Piket</button>
         <div id="jadwalContainer">
-            <h2>Jadwal Hari Ini:</h2>
+            <h2>Jadwal Hari Ini (<span id="namaHariIni"></span>):</h2>
             <ul id="jadwalHariIniList">
                 <!-- Jadwal akan diisi oleh JavaScript -->
             </ul>
-            <h2>Jadwal Lengkap:</h2>
+            <h2>Jadwal Lengkap Minggu Ini:</h2>
             <ul id="jadwalLengkapList">
                 <!-- Jadwal akan diisi oleh JavaScript -->
             </ul>
         </div>
     </main>
+    <footer>
+        <p>&copy; 2024 Jadwal Piket PWA. Dibuat dengan ❤️.</p>
+    </footer>
     <script src="/pwa-jadwal-piket/script.js"></script>
 </body>
 </html>

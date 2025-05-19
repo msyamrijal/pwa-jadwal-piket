@@ -1,58 +1,94 @@
 /* style.css */
+:root {
+    --primary-color: #007bff; /* Biru */
+    --secondary-color: #6c757d; /* Abu-abu */
+    --light-color: #f8f9fa; /* Putih keabuan */
+    --dark-color: #343a40; /* Hitam keabuan */
+    --success-color: #28a745; /* Hijau */
+    --danger-color: #dc3545; /* Merah */
+    --warning-color: #ffc107; /* Kuning */
+    --info-color: #17a2b8; /* Biru muda info */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --border-radius: 0.3rem;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: #eef2f5; /* Latar belakang sedikit abu-abu */
+    color: var(--dark-color);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #007bff;
+    background: linear-gradient(90deg, var(--primary-color), #0056b3);
     color: #fff;
-    padding: 1.2rem 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 main {
-    padding: 1rem;
-    max-width: 700px;
-    margin: 1.5rem auto;
+    flex: 1;
+    padding: 1.5rem;
+    max-width: 800px;
+    width: 90%;
+    margin: 2rem auto;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 #enableNotifications {
     display: block;
-    margin: 0 auto 1.5rem auto;
+    margin: 0 auto 2rem auto;
     padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: #fff;
-    background-color: #28a745;
+    background-color: var(--success-color);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 #enableNotifications:hover {
-    background-color: #218838;
+    background-color: #218838; /* Sedikit lebih gelap saat hover */
+    transform: translateY(-2px);
+}
+
+#enableNotifications:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.7;
 }
 
 #jadwalContainer h2 {
-    color: #0056b3; /* Warna biru yang lebih gelap */
-    border-bottom: 2px solid #e9ecef;
-    padding-bottom: 0.5rem;
-    margin-top: 1.5rem;
-    font-size: 1.4rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+#jadwalContainer h2:first-of-type {
+    margin-top: 0;
 }
 
 #jadwalContainer ul {
@@ -61,10 +97,62 @@ main {
 }
 
 #jadwalContainer ul li {
-    background-color: #f8f9fa;
-    margin-bottom: 0.6rem;
-    padding: 0.9rem;
-    border-radius: 4px;
-    border-left: 5px solid #007bff;
-    font-size: 0.95rem;
+    background-color: var(--light-color);
+    margin-bottom: 0.8rem;
+    padding: 1rem 1.2rem;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--info-color);
+    font-size: 1rem;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#jadwalContainer ul li:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+#jadwalContainer ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Style untuk pesan "Tidak ada jadwal" */
+#jadwalContainer ul li.no-schedule-message {
+    border-left-color: var(--warning-color);
+    background-color: #fff3cd; /* Kuning muda untuk pesan peringatan */
+    color: #856404; /* Teks gelap untuk kontras */
+    font-style: italic;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 0.9rem;
+    margin-top: auto; /* Mendorong footer ke bawah jika konten pendek */
+}
+
+/* Responsif sederhana */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+    main {
+        width: 95%;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    #jadwalContainer h2 {
+        font-size: 1.4rem;
+    }
+    #jadwalContainer ul li {
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+    }
+    #enableNotifications {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+    }
 }
